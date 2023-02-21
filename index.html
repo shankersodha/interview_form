@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #form{
+        text-align: center;
+    }
+    h2{
+        color: blue;
+        text-transform:uppercase;
+        margin: 1rem;
+    }
+    #data {
+        color: red;
+        font-size: 2em;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        text-shadow: 20 20 54 52 solid black;
+        display: none;
+    }
+    span{
+        color: green;
+    }
+
+    button {
+        font-size: 2em;
+
+    }
+    .fields{
+        margin: 1rem;
+        width: 300px;
+        padding: 10px;
+        border-radius: 10px;
+        border:1px solid gray;
+    }
+    #btn{
+        margin: 1rem;
+        width: 300px;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: blue;
+        color: white;
+        border-color: transparent;
+        
+    }
+</style>
+
+<body>
+    <h2 id="data">
+        <p>Name:  <span id="name"></span></p>
+        <p>Age:  <span id="age1"></span></p>
+        <p>Email:  <span id="email"></span></p>
+        <p>Number: <span id="number"></span></p>
+        <p>Qualification: <span id="qualification"></span></p>
+        <p>Cnic Mo: <span id="cnicno"></span></p>
+        <p>City: <span id="city1"></span></p>
+       
+    </h2>
+    <div id="form">
+        <h2>Interview Form</h2>
+        <input type="text" id="firstname" placeholder="First Name " class="fields"> 
+        <input type="text" id="lastname" placeholder="Last Name"  class="fields"> <br>
+        <input type="number" id="age" placeholder="Age" class="fields"> 
+        <input type="email" id="gmail" placeholder="Email " class="fields"> <br>
+        <input type="password" id="password" placeholder="Password " class="fields"> 
+
+        <input type="number" id="num" placeholder=" Phone Number " class="fields"> <br>
+        <input type="text" id="qual" placeholder="Qualification " class="fields"> 
+        <input type="text" id="matric" placeholder="Last percentage " class="fields"> <br>
+        <input type="number" id="cnic" placeholder="Enter Your CNIC Number "class="fields"> 
+        <select id="city" class="fields">
+            <option>select you city</option>
+            <option value="mithi"> mithi</option>
+            <option value="diplo"> doplo</option>
+            <option value="umerkot"> umerkot</option>
+            <option value="islamkot"> islamkot</option>
+        </select> <br>
+
+        <button onclick="btn()" id="btn"> Submit</button>
+    </div>
+</body>
+<script>
+    function btn() {
+        var firstname = document.getElementById("firstname");
+        var lastname = document.getElementById("lastname");
+        var age = document.getElementById("age");
+        var gmail = document.getElementById("gmail");
+        var password = document.getElementById("password");
+        var num = document.getElementById("num");
+        var matric = document.getElementById("matric");
+        var cnic = document.getElementById("cnic");
+        var qual = document.getElementById("qual");
+        var city = document.getElementById("city");
+
+        const interviewer = {
+                    firstName:firstname.value,
+                    lastName:lastname.value,
+                    Age:age.value,
+                    gmail:gmail.value,
+                    password:password.value,
+                    contactNo:num.value,
+                    percentage:matric.value,
+                    cnicNo:cnic.value,
+                    Qualification:qual.value,
+                    City:city.value
+                }
+                console.log(interviewer);
+                document.getElementById("data").style.display = "inline-block";
+                document.getElementById("form").style.display = "none"
+                document.getElementById("name").innerHTML = interviewer.firstName + interviewer.lastName;
+                document.getElementById("age1").innerHTML = interviewer.Age;
+                document.getElementById("email").innerHTML = interviewer.gmail;
+                document.getElementById("number").innerHTML = interviewer.contactNo;
+                document.getElementById("qualification").innerHTML = interviewer.Qualification;
+                document.getElementById("cnicno").innerHTML = interviewer.cnicNo;
+                document.getElementById("city1").innerHTML = interviewer.City;
+        // if (age.value >= 18 && age.value <= 35) {
+        //     if (qual.value === "bachelor" || qual.value === "master" && city.value === "mithi" || city.value === "diplo") {
+
+        //     }
+        //     else {
+        //         document.getElementById("data").style.display = "inline-block";
+        //         document.getElementById("data").innerHTML = "Sorry!" + firstname.value + "are you not select for this interviw"
+        //     }
+        // }
+        // else {
+        //     document.getElementById("data").style.display = "inline-block";
+        //     document.getElementById("data").innerHTML = "sorry!" + firstname.value + "are you rejected for this interviw"
+        // }
+    }
+</script>
+
+</html>
